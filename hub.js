@@ -13,13 +13,13 @@ function newMessageHandler(payload) {
 
 function joinRoom(payload, socket) {
   socket.join(payload)
-  console.log(`room ${payload} joined!`);
+  console.log(`Room ${payload} joined!`);
 }
 
 let userNumber = 0;
 function handleConnection(socket) {
     userNumber++;
-    console.log("We have a new connection: " + userNumber);
+    console.log("We have a new connection: User " + userNumber);
     socket.on('roomName', (payload) => joinRoom(payload, socket));
     socket.on("newMessage", newMessageHandler);
 }
