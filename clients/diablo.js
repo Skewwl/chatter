@@ -4,7 +4,7 @@ let Chance = require('chance');
 
 let chance = new Chance();
 let messageObject = {};
-let room = 'catChat';
+let room = 'diabloFour';
 messageObject.message = chance.sentence();
 messageObject.room = room;
 let isGone = false;
@@ -20,10 +20,9 @@ const intervalID = setInterval(() => {
 }, 2500);
 client.on('hereIsTheMessage', messageRecieved);
 
-
-setTimeout(() => {
     setTimeout(() => {
-        client.emit('leave', room);
-    }, 5000);
-    return isGone = true;
-}, 10000);
+        setTimeout(() => {
+            client.emit('leave', room);
+        }, 10000);
+        return isGone = true;
+    }, 14000);
