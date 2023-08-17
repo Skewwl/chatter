@@ -20,10 +20,9 @@ const intervalID = setInterval(() => {
 }, 2500);
 client.on('hereIsTheMessage', messageRecieved);
 
-
 setTimeout(() => {
     setTimeout(() => {
         client.emit('leave', room);
-    }, 5000);
+    }, 4000);
     return isGone = true;
-}, 10000);
+}, 15000);
